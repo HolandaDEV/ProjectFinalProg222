@@ -6,29 +6,21 @@
 void addAluno(){
     aluno* p = (aluno*)malloc(sizeof(aluno));
     printf("digite o RA do aluno\n");
-    int RA;
-    scanf("%d",&RA);
+    scanf("%d",&p->RA);
     getchar();
 
-//digita o name do aluno
     printf("digite o nome do aluno\n");
-    char name [TAMNAME];
-    scanf("%[^\n]",name);
+    scanf("%[^\n]",p->name);
     getchar();
 
-//digita o login do aluno
     printf("digite o login\n");
-    char login[TAMLOGIN];
-    scanf("%[^\n]",login);
+    scanf("%[^\n]",&p->login);
     getchar();
 
-//difgita a senha do aluno 
     printf("digite a senha\n");
-    char password[TAMSENHA];
-    scanf("%[^\n]",password);
+    scanf("%[^\n]",&p->password);
     getchar();
 
-  //cria ou abre o arquvo que cadastra os alunos
     FILE* alun;
     alun=fopen("Aluno.txt","a+");
     if(alun==NULL){
@@ -36,15 +28,13 @@ void addAluno(){
       exit(0);
     }
 
-
-  // escreve o os dados do aluno no arquivo 
-  //Aluno.txt RA,Nome,login,senha
-    fprintf(alun,"%d,%s,%s,%s\n",RA,name,login,password);
+    //Aluno.txt RA,Nome,login,senha
+    fprintf(alun,"%d,%s,%s,%s\n",p->RA,p->name,p->login,p->password);
     fclose(alun);
 
 }
 
-int lerString(char login[TAMLOGIN],char senha[TAMSENHA]){
+int loginAluno(char login[TAMLOGIN],char senha[TAMSENHA]){
     
     FILE* arquivo;
     arquivo = fopen("Aluno.txt","r");
@@ -160,4 +150,37 @@ void imprimeDisciplina(Disciplina * disc){
     }
     
     fclose(fl);
+}
+void realizarMatricular(int status){
+    /* Anotações:
+     * <> Fazer a busca da Disciplina pelo arquivo (consultaDisciplina). 
+     * <> Somente será possível cadastrar uma disciplina se, e somente se, o aluno já tiver cursado os pré-requisitos e
+     *    tiver obtido, no mínimo, conceito igual a 5 e faltas menor que 25%.
+     * <> Caso não exista a disciplina no momento do cadastro, o sistema deve informar de imediato que a disciplina não
+     *    existe, mas não apagar as outras que já foram digitadas.
+     * <> Não é permitido inserir um semestre que seja anterior ao semestre mais atual do aluno, caso isso ocorra,
+     *    o sistema deverá informar de imediato o erro e pedir um novo semestre.
+     */
+    
+    //variaveis
+    char codDisc[5];
+    char codExit[5] = "XX000";
+    int qtdeCred = 0;
+    FILE * fl = fopen("AlunosDisciplinas.txt", "w");
+    //code:
+
+    if (status == 1)
+    {
+        while (qtdeCred <= MAX_CRED)
+        {
+            while (strcmp(codExit, codDisc) == 1)
+            {
+                scanf("%s", codDisc);
+            }
+            
+        }
+        puts("ERROR 0001 - Quantidade de créditos maximos excedida");
+        exit(1);
+    }
+    
 }

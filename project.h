@@ -6,13 +6,14 @@
 #define TAMNAME 30
 #define TAMSENHA 20
 #define TAMLOGIN 20
+#define MAX_CRED 32
 
 typedef struct aluno
 {
     int RA;
     char name[20];
     char login[10];
-    char passaword[10];
+    char password[10];
 }aluno;
 
 typedef struct alunos
@@ -32,8 +33,9 @@ typedef struct Disciplinas
 
 
 void addAluno();
-int lerString(char Login[TAMLOGIN],char Senha[TAMSENHA]);
+int loginAluno(char Login[TAMLOGIN],char Senha[TAMSENHA]);
 Disciplina * consultaDisciplina(char* cod);
 void imprimeDisciplina(Disciplina * disc);
+void realizarMatricular(int status);
 
 #endif 
