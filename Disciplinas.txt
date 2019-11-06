@@ -1,0 +1,90 @@
+EB101,Cálculo,006
+ 
+EB102,Geometria Analítica e Álgebra Linear,006
+
+SI010,Estrutura de Dados II,004
+ 
+SI100,Algoritmos e Programação de Computadores I,004
+
+SI102,Seminários I,002 
+
+SI200,Algoritmos e Programação de Computadores II,004 
+
+SI201,Estrutura de Dados I,004
+
+SI202,Resolução de Problemas I,004
+
+SI300,Programação Orientada a Objetos I,004
+
+SI304,Engenharia de Software II,004
+
+SI305,Análise de Sistemas de Informação I,004
+
+SI400,Programação Orientada a Objetos II,004
+
+SI401,Programação para a Web,004
+
+SI404,Introdução a Interfaces Humano-Computador,002
+
+SI405,Análise de Sistemas de Informação II,004
+
+SI700,Programação para Dispositivos Móveis,004
+
+SI703,Governança e Planejamento Estratégico de TI,002
+
+SI704,Seminários II,002
+
+SI800,Empreendedorismo e Inovação,002
+
+ST008,Metodologia do Trabalho Científico,002
+
+ST096,Ciência, Tecnologia e Sociedade,002
+
+ST266,Engenharia de Software I,002
+
+ST562,Estruturas de Arquivos,004
+
+ST567,Banco de Dados I,004
+
+ST568,Redes de Comunicação I,004
+
+ST765,Computação Gráfica,004
+
+ST767,Banco de Dados II,004
+
+TT060,Gestão de Projetos,004
+
+TT106,Organização e Arquitetura de Computadores,004
+
+TT304,Sistemas Operacionais,004
+
+TT350,Administração de Empresas,004
+------------------------------------------------------------
+Eletivas 
+
+SI901,Iniciação Científica I,010
+
+SI902,Iniciação Científica II,010
+
+SI903,Iniciação Tecnológica I,010
+
+SI904,Iniciação Tecnológica II,010
+
+SI905,Monitoria I,005
+
+SI906,Monitoria II,005
+
+SI909,Atividades Complementares,010
+
+------------------------------------------------------
+
+SI912,Trabalho de Conclusão de Curso I,006
+
+SI913,Trabalho de Conclusão de Curso II,006
+
+SI914,Estágio em Computação I,006
+
+SI915,Estágio em Computação II,006
+
+
+
