@@ -211,7 +211,6 @@ void cadastrarDisciplina(Aluno* aluno){
     int semestreAtual = 1;
     int semestre = 0;
     int qtdeCred = 0;
-    char codExit[5] = "XX000";
     Disciplina * disc =(Disciplina*) malloc(sizeof(Disciplina));
     FILE * fl = fopen("AlunosDisciplinas.txt", "w");
     //code:
@@ -222,6 +221,8 @@ void cadastrarDisciplina(Aluno* aluno){
         {         
             puts("Digite o semestre:");
             scanf("%d", &semestre);
+            getchar();
+            
             if (!(semestre < semestreAtual))
             {
                 while (qtdeCred <= MAX_CRED)
@@ -229,13 +230,11 @@ void cadastrarDisciplina(Aluno* aluno){
                         puts("Digite o a disciplina:");
                         scanf("%s", disc->codigo);
                         getchar();
-                        printf("->%s", disc->codigo);
-                        if (!strcmp(disc->codigo, codExit))
+                        printf("%d\n", strcmp(disc->codigo, "XX000"));
+                        if (strcmp(disc->codigo, "XX000") != 0)
                         {
                             fprintf(fl, "%s,", disc->codigo);
-                            printf("->%s", disc->codigo);
                             *(disc->codigo) = 0;
-                            printf("%s", disc->codigo);
                         }else
                         {
                             break;
