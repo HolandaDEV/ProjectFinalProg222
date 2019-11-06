@@ -38,7 +38,7 @@ SI800,Empreendedorismo e Inovação,002
 
 ST008,Metodologia do Trabalho Científico,002
 
-ST096,Ciência, Tecnologia e Sociedade,002
+ST096,Ciência Tecnologia e Sociedade,002
 
 ST266,Engenharia de Software I,002
 

@@ -3,39 +3,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TAMNAME 30
-#define TAMSENHA 20
-#define TAMLOGIN 20
+#define TAM_NOME 30
+#define TAM_SENHA 20
+#define TAM_LOGIN 20
 #define MAX_CRED 32
 
-typedef struct aluno
+
+typedef struct Aluno
 {
     int RA;
-    char name[20];
-    char login[10];
-    char password[10];
-}aluno;
+    char name[TAM_NOME];
+    char login[TAM_LOGIN];
+    char passaword[TAM_SENHA];
+}Aluno;
+typedef struct Disciplina Disciplina;
 
-typedef struct alunos
-{
-    aluno *lista[100];
-    int top;
+typedef struct Prerequisito
+{   
+    int qtd;
+    Disciplina*  disciplina[3];
+}Prerequisito;
 
-}alunos;
-
-typedef struct Disciplinas
+typedef struct Disciplina
 {
     char codigo[10];
     char nome[1000];
     int creditos;
-
+    int qtdPrerequisito;
+    Prerequisito prerequisto[3];
 }Disciplina;
 
 
 void addAluno();
-int loginAluno(char Login[TAMLOGIN],char Senha[TAMSENHA]);
+Aluno* loginAluno(char* login,char* senha);
+void atribuiPrerequisito(Disciplina* disciplina);
 Disciplina * consultaDisciplina(char* cod);
 void imprimeDisciplina(Disciplina * disc);
-void realizarMatricular(int status);
+void cadastrarDisciplina(Aluno* aluno);
 
 #endif 

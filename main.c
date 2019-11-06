@@ -12,20 +12,23 @@ int main(){
     // char nome[]="edy";
     // char senha[]="123";
     // printf("%d",lerString(nome,senha));
-    //imprimeDisciplina(consultaDisciplina("ST765"));
+    //imprimeDisciplina(consultaDisciplina("ST765"));]]
 
-    char usuario[100];
-    char senha[100];
+    char usuario[TAM_LOGIN];
+    char senha[TAM_SENHA];
     char codigo[100];
+    Aluno * a;
     do{
         puts("Digite o usuario:");
         scanf("%s",usuario);
         puts("Digite a senha:");
         scanf("%s",senha);
-        if(!loginAluno(usuario,senha)){
+
+        a = loginAluno(usuario,senha);
+        if(a->RA==0){
             puts("Usuario ou senha incorreto, tente novamente!");
         }
-    }while(!loginAluno(usuario,senha));
+    }while(a->RA==0);
     int n;
     while(1){
         puts("\n----Escolha a opção---");
@@ -33,21 +36,27 @@ int main(){
         puts("2 - Consulta de disciplina");
         puts("3 - Realizar Matricula");
         puts("4 - Sair!");
+        
         scanf("%d",&n);
         switch (n)
         {
         case 1:addAluno();
+            /* code */
             break;
         case 2:
             puts("Digite o código da disciplina");
             scanf("%s",codigo);
-            imprimeDisciplina(consultaDisciplina(codigo));
+            Disciplina* d = consultaDisciplina(codigo);
+            atribuiPrerequisito(d);
+            imprimeDisciplina(d);
+            /* code */
             break;
+
         case 3:
-            realizarMatricular(loginAluno(usuario,senha));
+            cadastrarDisciplina(a);
             break;
         case 4:
-            puts("Ate a proxima!");
+            puts("Tchau");
             return 0;
         default:
             puts("Código inválido!");
