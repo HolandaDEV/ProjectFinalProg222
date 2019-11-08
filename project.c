@@ -212,7 +212,7 @@ void cadastrarDisciplina(Aluno* aluno){
     int semestre = 0;
     int qtdeCred = 0;
     Disciplina * disc =(Disciplina*) malloc(sizeof(Disciplina));
-    FILE * fl = fopen("AlunosDisciplinas.txt", "w");
+    FILE * fl = fopen("AlunosDisciplinas.txt", "wXX))");
     //code:
 
     if (aluno->RA != 0)
@@ -230,9 +230,24 @@ void cadastrarDisciplina(Aluno* aluno){
                         puts("Digite o a disciplina:");
                         scanf("%s", disc->codigo);
                         getchar();
-                        printf("%d\n", strcmp(disc->codigo, "XX000"));
+                        //printf("%d\n", strcmp(disc->codigo, "XX000"));
                         if (strcmp(disc->codigo, "XX000") != 0)
-                        {
+                        {   int creditoDisciplina ;
+                            creditoDisciplina = consultaDisciplina(disc->codigo)->creditos;
+
+                            if(creditoDisciplina !=0 )
+                            {   if((qtdeCred+creditoDisciplina) == MAX_CRED){
+                                qtdeCred += creditoDisciplina;
+                                    printf("%d\n",qtdeCred);
+                                    break;
+                                }else if((qtdeCred + creditoDisciplina) < MAX_CRED){
+                                    qtdeCred += creditoDisciplina;
+                                    printf("%d\n",qtdeCred);
+                                }
+                            }else
+                            {
+                                printf("Materia nao existe\n");
+                            }
                             fprintf(fl, "%s,", disc->codigo);
                             *(disc->codigo) = 0;
                         }else
