@@ -35,7 +35,8 @@ int main(){
         puts("1 - Cadastro de aluno");
         puts("2 - Consulta de disciplina");
         puts("3 - Realizar Matricula");
-        puts("4 - Sair!");
+        puts("4 - Consulta Nota e Falta!");
+        puts("5 - Sair!");
         
         scanf("%d",&n);
         switch (n)
@@ -56,6 +57,9 @@ int main(){
             cadastrarDisciplina(a);
             break;
         case 4:
+            atualizarNotaFalta(a);
+            break;
+        case 5:
             puts("Tchau");
             return 0;
         default:

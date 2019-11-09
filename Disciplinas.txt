@@ -59,8 +59,6 @@ TT106,Organização e Arquitetura de Computadores,004
 TT304,Sistemas Operacionais,004
 
 TT350,Administração de Empresas,004
-------------------------------------------------------------
-Eletivas 
 
 SI901,Iniciação Científica I,010
 
@@ -75,8 +73,6 @@ SI905,Monitoria I,005
 SI906,Monitoria II,005
 
 SI909,Atividades Complementares,010
-
-------------------------------------------------------
 
 SI912,Trabalho de Conclusão de Curso I,006
 
